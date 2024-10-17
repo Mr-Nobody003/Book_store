@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-store-server-eta.vercel.app/books/${id}`)
       .then((response) => {
         const book = response.data.book; // Access the nested book object
         console.log(book); // Log to inspect the book object
@@ -46,7 +46,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`https://book-store-server-eta.vercel.app/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book edited successfully', { variant: 'success' });
